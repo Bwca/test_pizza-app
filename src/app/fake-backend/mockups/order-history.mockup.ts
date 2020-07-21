@@ -1,10 +1,3 @@
-import { OrderDto } from '../../shared/dto/order.dto';
+import { OrderHistoryDto } from '../../shared/dto/order-history/order-history.dto';
 
-export const ORDER_HISTORY_MOCKUP: OrderDto[] = [
-    {
-        id: 1,
-        date: '1990-12-12',
-        items: ['Pizza', 'Some other pizza'],
-        total: '$30.00'
-    }
-];
+export const ORDER_HISTORY_MOCKUP: OrderHistoryDto[] = [];
