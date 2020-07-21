@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
@@ -14,6 +15,7 @@ import { FakeBackendService } from './fake-backend/fake-backend.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       FakeBackendService, { dataEncapsulation: false }
     )

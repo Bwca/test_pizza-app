@@ -1,8 +1,14 @@
-import { UserDto } from '../../shared/dto/user.dto';
+import { UserDto } from '../../shared/dto/user/user.dto';
 
-export const USERS_MOCKUP: UserDto[] = [
+interface UserDbRecord extends UserDto {
+  password: string;
+}
+
+export const USERS_MOCKUP: UserDbRecord[] = [
   {
     id: 11,
     username: 'John Doe',
+    login: 'some-user',
+    password: 'unsafe-password',
   },
 ];
