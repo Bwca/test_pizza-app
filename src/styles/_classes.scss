@@ -1,0 +1,27 @@
+%responsive-image {
+  display: block;
+  max-width: 100%;
+}
+
+%level-2-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+%regular-text {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+%price-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+%centered-flex-container {
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  align-items: center;
+}

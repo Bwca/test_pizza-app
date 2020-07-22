@@ -1,1 +1,28 @@
-<p>catalogue-preview-item works!</p>
+<header>
+  <button (click)="closePreview.emit()" class="close-button">^</button>
+</header>
+
+<div class="item-image-container">
+  <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
+</div>
+
+<div class="description">
+  <h2 class="item-name">{{ pizza.name }}</h2>
+  <p class="item-description">{{ pizza.description }}</p>
+</div>
+
+<div class="price">{{ price$ | async }}</div>
+
+<div class="counter">
+  <div class="amount-controls">
+    <button (click)="increaseAmount()" class="qty-modifier">+</button>
+    <span class="amount">{{ quantity }}</span>
+    <button (click)="decreaseAmount()" class="qty-modifier">-</button>
+  </div>
+</div>
+
+<footer>
+  <button (click)="addItemToCart()" class="add-to-cart-button">
+    Add To Cart
+  </button>
+</footer>

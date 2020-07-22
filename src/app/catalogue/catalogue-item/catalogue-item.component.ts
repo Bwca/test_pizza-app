@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { PizzaDto } from 'src/app/shared/dto/pizza.dto';
 import { PizzaPriceService } from 'src/app/shared/pizza-price/pizza-price.service';
+import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-catalogue-item',
@@ -13,10 +14,17 @@ export class CatalogueItemComponent {
   @Input() set item(pizza: PizzaDto) {
     this.pizza = pizza;
     this.price$ = this.pizzaPriceService.getPizzaPrice(pizza);
+    this.quantityInShoppingCart$ = this.shoppingCartService.getQuantityInShoppingCart(
+      pizza
+    );
   }
 
   public pizza!: PizzaDto;
   public price$!: Observable<number>;
+  public quantityInShoppingCart$!: Observable<number>;
 
-  constructor(private pizzaPriceService: PizzaPriceService) {}
+  constructor(
+    private pizzaPriceService: PizzaPriceService,
+    private shoppingCartService: ShoppingCartService
+  ) {}
 }

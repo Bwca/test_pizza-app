@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { CurrencyDto } from '../dto/currency.dto';
 import { environment } from '../../../environments/environment';
@@ -10,7 +10,9 @@ import { environment } from '../../../environments/environment';
 })
 export class CurrencyService {
   private availableCurrencies$$ = new BehaviorSubject<CurrencyDto[]>([]);
-  private selectedCurrency$$ = new Subject<CurrencyDto>();
+  private selectedCurrency$$ = new BehaviorSubject<CurrencyDto>(
+    {} as CurrencyDto
+  );
   constructor(private apiService: ApiService) {
     this.loadCurrencues();
   }

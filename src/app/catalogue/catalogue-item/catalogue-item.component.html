@@ -1,5 +1,8 @@
-<h2>{{ pizza.name }}</h2>
+<ng-container *ngIf="quantityInShoppingCart$ | async as qty">
+  <span class="qty-in-cart">{{ qty }}</span>
+</ng-container>
 <div>
-  <img [src]="pizza.imageUrl" [alt]="pizza.name" />
+  <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
 </div>
-<p>{{ price$ | async }}</p>
+<h2 class="item-name">{{ pizza.name }}</h2>
+<p class="item-price">{{ price$ | async }}</p>

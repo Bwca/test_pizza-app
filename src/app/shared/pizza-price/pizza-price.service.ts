@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { PizzaDto } from '../dto/pizza.dto';
@@ -13,6 +13,7 @@ export class PizzaPriceService {
 
   public getPizzaPrice(pizza: PizzaDto): Observable<number> {
     return this.currencyService.selectedCurrency$.pipe(
+      filter((currency) => Boolean(currency.id)),
       map((currency) => {
         const price = pizza.prices.find(
           ({ currencyId }) => currency.id === currencyId

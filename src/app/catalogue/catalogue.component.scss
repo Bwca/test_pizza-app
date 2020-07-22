@@ -1,15 +1,40 @@
+@import "variables";
+
 :host {
-    display: grid;
+  display: grid;
+  gap: 2rem;
+  position: relative;
+}
+
+@media screen and (max-width: 400px) {
+  :host {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  :host {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  :host {
     grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-app-catalogue-preview-item{
-    grid-column-start: 1;
-    grid-column: span 4;
-    position: fixed;
-    bottom: 0;
+app-catalogue-preview-item {
+  grid-column-start: 1;
+  grid-column: span 4;
+  position: fixed;
+  bottom: 0;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 10px $shade-color;
+  width: $max-container-width;
 }
 
-app-catalogue-item{
-    margin:auto;
+app-catalogue-item {
+  margin: auto;
+  cursor: pointer;
 }

@@ -55,7 +55,8 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
   {
     id: 4,
     name: 'Lamb Baa Baa',
-    description: 'Tomato base, slow cooked grass fed lamb, spanish onion, grilled eggplant topped with mozzarella garnished with wild rocket & garlic yogurt',
+    description:
+      'Tomato base, slow cooked grass fed lamb, spanish onion, grilled eggplant topped with mozzarella garnished with wild rocket & garlic yogurt',
     imageUrl: '/assets/pizza/WalterGs-Lamb-Baa-Baa-380x380.jpg',
     prices: [
       {
@@ -71,7 +72,8 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
   {
     id: 5,
     name: 'Round Supreme',
-    description: 'Tomato base, free range smoked leg ham, chorizo sausage, pepperoni, mushrooms, fresh capsicum, spanish onion, chunky cut pineapple, olives topped with mozzarella',
+    description:
+      'Tomato base, free range smoked leg ham, chorizo sausage, pepperoni, mushrooms, fresh capsicum, spanish onion, chunky cut pineapple, olives topped with mozzarella',
     imageUrl: '/assets/pizza/WalterGs-Walters-Supreme-380x380.jpg',
     prices: [
       {
@@ -87,7 +89,8 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
   {
     id: 6,
     name: 'Meat Obsession',
-    description: 'Smokey barbecue base, free range marinated chicken, free range smoked leg ham, pepperoni, chorizo sausage, grass fed ground beef, free range bacon topped with mozzarella',
+    description:
+      'Smokey barbecue base, free range marinated chicken, free range smoked leg ham, pepperoni, chorizo sausage, grass fed ground beef, free range bacon topped with mozzarella',
     imageUrl: '/assets/pizza/WalterGs-Meat-Obsession-380x380.jpg',
     prices: [
       {
@@ -120,7 +123,8 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
   {
     id: 8,
     name: 'Veggie Patch',
-    description: 'Tomato base, baby spinach, mushrooms, roasted red capsicum, grilled eggplant, cherry tomatoes, fresh buffalo cheese topped with mozzarella garnished with pesto aioli',
+    description:
+      'Tomato base, baby spinach, mushrooms, roasted red capsicum, grilled eggplant, cherry tomatoes, fresh buffalo cheese topped with mozzarella garnished with pesto aioli',
     imageUrl: '/assets/pizza/WalterGs-Veggie-Patch-380x380.jpg',
     prices: [
       {

@@ -1,5 +1,45 @@
+@import "variables";
+@import "classes";
+
 :host {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  box-shadow: 0px 3px 2px 1px $shade-color;
+  position: relative;
+}
+
+.item-name {
+  @extend %level-2-heading;
+}
+
+.item-price {
+  @extend %price-text;
+  margin: 0;
+  padding: 0;
+}
+
+.item-image {
+  @extend %responsive-image;
+}
+
+$radius: 2rem;
+$top-left: 10px;
+.qty-in-cart {
+  border-radius: 50%;
+  width: $radius;
+  height: $radius;
+  line-height: $radius;
+  top: $top-left;
+  left: $top-left;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $light-color;
+  background-color: $highlight-color;
+  position: absolute;
 }
