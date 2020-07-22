@@ -1,4 +1,4 @@
 export interface OrderItemDto {
-    itemId: number;
-    quantity: number;
+  itemId: number;
+  quantity: number;
 }

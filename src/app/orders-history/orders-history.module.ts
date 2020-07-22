@@ -5,12 +5,8 @@ import { OrdersHistoryRoutingModule } from './orders-history-routing.module';
 import { OrdersHistoryComponent } from './orders-history.component';
 import { HistoryRecordComponent } from './history-record/history-record.component';
 
-
 @NgModule({
   declarations: [OrdersHistoryComponent, HistoryRecordComponent],
-  imports: [
-    CommonModule,
-    OrdersHistoryRoutingModule
-  ]
+  imports: [CommonModule, OrdersHistoryRoutingModule],
 })
-export class OrdersHistoryModule { }
+export class OrdersHistoryModule {}

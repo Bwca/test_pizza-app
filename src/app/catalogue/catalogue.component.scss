@@ -1,0 +1,15 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+app-catalogue-preview-item{
+    grid-column-start: 1;
+    grid-column: span 4;
+    position: fixed;
+    bottom: 0;
+}
+
+app-catalogue-item{
+    margin:auto;
+}

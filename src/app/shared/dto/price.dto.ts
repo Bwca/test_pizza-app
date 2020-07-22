@@ -1,4 +1,4 @@
 export interface PriceDto {
-    currencyId: number;
-    amount: number;
+  currencyId: number;
+  amount: number;
 }

@@ -7,6 +7,6 @@ const routes: Routes = [{ path: '', component: OrdersHistoryComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class OrdersHistoryRoutingModule { }
+export class OrdersHistoryRoutingModule {}

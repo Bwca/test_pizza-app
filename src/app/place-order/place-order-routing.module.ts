@@ -7,6 +7,6 @@ const routes: Routes = [{ path: '', component: PlaceOrderComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PlaceOrderRoutingModule { }
+export class PlaceOrderRoutingModule {}

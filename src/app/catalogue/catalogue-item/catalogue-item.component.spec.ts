@@ -8,9 +8,8 @@ describe('CatalogueItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CatalogueItemComponent ]
-    })
-    .compileComponents();
+      declarations: [CatalogueItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
