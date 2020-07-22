@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { FakeBackendService } from './fake-backend/fake-backend.service';
 
