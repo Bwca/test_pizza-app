@@ -1,9 +1,9 @@
-import {PriceDto} from './price.dto';
+import { PriceDto } from './price.dto';
 
 export interface PizzaDto {
-    id: number;
-    name: string;
-    description: string;
-    imageUrl: string;
-    prices: PriceDto [];
+  id: number;
+  name: string;
+  description: string;
+  imageUrl: string;
+  prices: PriceDto[];
 }

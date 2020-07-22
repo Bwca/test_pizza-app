@@ -1,4 +1,4 @@
-export interface OrderHistoryItemDto{
-    name: string;
-    quantity: number;
+export interface OrderHistoryItemDto {
+  name: string;
+  quantity: number;
 }

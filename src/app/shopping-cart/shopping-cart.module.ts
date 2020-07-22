@@ -5,12 +5,8 @@ import { ShoppingCartRoutingModule } from './shopping-cart-routing.module';
 import { ShoppingCartComponent } from './shopping-cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 
-
 @NgModule({
   declarations: [ShoppingCartComponent, CartItemComponent],
-  imports: [
-    CommonModule,
-    ShoppingCartRoutingModule
-  ]
+  imports: [CommonModule, ShoppingCartRoutingModule],
 })
-export class ShoppingCartModule { }
+export class ShoppingCartModule {}

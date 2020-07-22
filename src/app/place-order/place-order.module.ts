@@ -4,12 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PlaceOrderRoutingModule } from './place-order-routing.module';
 import { PlaceOrderComponent } from './place-order.component';
 
-
 @NgModule({
   declarations: [PlaceOrderComponent],
-  imports: [
-    CommonModule,
-    PlaceOrderRoutingModule
-  ]
+  imports: [CommonModule, PlaceOrderRoutingModule],
 })
-export class PlaceOrderModule { }
+export class PlaceOrderModule {}

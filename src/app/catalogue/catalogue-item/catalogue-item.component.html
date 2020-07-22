@@ -1,1 +1,8 @@
-<p>catalogue-item works!</p>
+<ng-container *ngIf="quantityInShoppingCart$ | async as qty">
+  <span class="qty-in-cart">{{ qty }}</span>
+</ng-container>
+<div>
+  <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
+</div>
+<h2 class="item-name">{{ pizza.name }}</h2>
+<p class="item-price">{{ price$ | async }}</p>
