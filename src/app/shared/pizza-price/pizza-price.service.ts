@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { CurrencyService } from '../currency/currency.service';
 import { PizzaDto } from '../dto/pizza.dto';

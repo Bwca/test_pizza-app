@@ -29,6 +29,7 @@
         "order": ["static-field", "instance-field", "static-method", "instance-method"]
       }
     ],
+    "no-unused-variable": true,
     "no-any": true,
     "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-empty": false,
