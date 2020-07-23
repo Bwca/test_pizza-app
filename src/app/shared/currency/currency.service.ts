@@ -10,9 +10,7 @@ import { CurrencyDto } from '../dto/currency.dto';
 })
 export class CurrencyService {
   private availableCurrencies$$ = new BehaviorSubject<CurrencyDto[]>([]);
-  private selectedCurrency$$ = new BehaviorSubject<CurrencyDto>(
-    {} as CurrencyDto
-  );
+  private selectedCurrency$$ = new BehaviorSubject<CurrencyDto>({} as CurrencyDto);
   constructor(private apiService: ApiService) {
     this.loadCurrencues();
   }

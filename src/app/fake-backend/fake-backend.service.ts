@@ -9,12 +9,7 @@ import { OrderHistoryItemDto } from '../shared/dto/order-history/order-history-i
 import { OrderHistoryDto } from '../shared/dto/order-history/order-history.dto';
 import { PizzaDto } from '../shared/dto/pizza.dto';
 import { UserDto } from '../shared/dto/user/user.dto';
-import {
-  CURRENCIES_MOCKUP,
-  ORDER_HISTORY_MOCKUP,
-  PIZZAS_MOCKUPS,
-  USERS_MOCKUP,
-} from './mockups';
+import { CURRENCIES_MOCKUP, ORDER_HISTORY_MOCKUP, PIZZAS_MOCKUPS, USERS_MOCKUP } from './mockups';
 
 interface FakeDatabase {
   pizzas: PizzaDto[];
@@ -90,16 +85,12 @@ export class FakeBackendService implements InMemoryDbService {
       const reqBody: CreateOrderDto = (reqInfo.req as any).body;
       const { headers, url } = reqInfo;
 
-      const id = ORDER_HISTORY_MOCKUP.length
-        ? Math.max(...ORDER_HISTORY_MOCKUP.map(({ id }) => id)) + 1
-        : 1;
+      const id = ORDER_HISTORY_MOCKUP.length ? Math.max(...ORDER_HISTORY_MOCKUP.map(({ id }) => id)) + 1 : 1;
       const date = new Date().toISOString();
       const items: OrderHistoryItemDto[] = [];
 
       let total = 0;
-      const selectedCurrency = CURRENCIES_MOCKUP.find(
-        (i) => i.id === reqBody.currencyId
-      );
+      const selectedCurrency = CURRENCIES_MOCKUP.find((i) => i.id === reqBody.currencyId);
       try {
         reqBody.orderedItems.forEach((i) => {
           const item = PIZZAS_MOCKUPS.find(({ id }) => id === i.itemId);
@@ -107,9 +98,7 @@ export class FakeBackendService implements InMemoryDbService {
             name: item!.name,
             quantity: i.quantity,
           });
-          total +=
-            item!.prices.find((i) => i.currencyId === selectedCurrency!.id)!
-              .amount * i.quantity;
+          total += item!.prices.find((i) => i.currencyId === selectedCurrency!.id)!.amount * i.quantity;
         });
       } catch (e) {
         console.log(e);

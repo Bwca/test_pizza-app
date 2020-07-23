@@ -1,5 +1,5 @@
-@import "variables";
-@import "classes";
+@import 'variables';
+@import 'classes';
 
 :host {
   background-color: $light-color;
@@ -7,10 +7,10 @@
   gap: 10px;
   grid-template-columns: 200px 1fr 1fr;
   grid-template-areas:
-    "header header      header"
-    "image  description description"
-    "image  price       counter"
-    "add    add         add";
+    'header header      header'
+    'image  description description'
+    'image  price       counter'
+    'add    add         add';
   box-sizing: border-box;
   padding: 10px 20px;
 }
@@ -19,12 +19,12 @@
   :host {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "image"
-      "description"
-      "price"
-      "counter"
-      "add"
-      "header";
+      'image'
+      'description'
+      'price'
+      'counter'
+      'add'
+      'header';
   }
 }
 

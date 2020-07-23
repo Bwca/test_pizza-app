@@ -15,9 +15,7 @@ export class PizzaPriceService {
     return this.currencyService.selectedCurrency$.pipe(
       filter((currency) => Boolean(currency.id)),
       map((currency) => {
-        const price = pizza.prices.find(
-          ({ currencyId }) => currency.id === currencyId
-        );
+        const price = pizza.prices.find(({ currencyId }) => currency.id === currencyId);
         if (price) {
           return price.amount;
         } else {
