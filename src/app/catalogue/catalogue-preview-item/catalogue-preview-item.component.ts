@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { PizzaDto } from 'src/app/shared/dto/pizza.dto';
@@ -23,14 +23,7 @@ export class CataloguePreviewItemComponent {
   public price$!: Observable<number>;
   public quantity = 1;
 
-  constructor(private eRef: ElementRef, private pizzaPriceService: PizzaPriceService, private shoppingCartService: ShoppingCartService) {}
-
-  @HostListener('document:click', ['$event'])
-  public clickout(event: MouseEvent): void {
-    if (!this.eRef.nativeElement.contains(event.target)) {
-      this.closePreview.emit();
-    }
-  }
+  constructor(private pizzaPriceService: PizzaPriceService, private shoppingCartService: ShoppingCartService) {}
 
   public increaseAmount(): void {
     this.quantity++;

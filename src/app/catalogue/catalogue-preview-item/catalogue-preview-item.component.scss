@@ -70,7 +70,7 @@ header {
   }
 }
 
-.price {
+app-item-price {
   grid-area: price;
   @extend %price-text;
   @extend %centered-flex-container;

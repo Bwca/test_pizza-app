@@ -1,5 +1,5 @@
 <ng-container *ngFor="let pizza of pizzas$ | async">
-  <app-catalogue-item [item]="pizza" (click)="selectPizza($event, pizza)"></app-catalogue-item>
+  <app-catalogue-item [item]="pizza" (click)="selectPizza( pizza)"></app-catalogue-item>
 </ng-container>
 
 <ng-container *ngIf="pizzaForPreview">

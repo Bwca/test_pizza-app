@@ -15,8 +15,7 @@ export class CatalogueComponent {
 
   constructor(private apiService: ApiService) {}
 
-  public selectPizza(event: MouseEvent, pizza: PizzaDto): void {
-    event.stopPropagation();
+  public selectPizza(pizza: PizzaDto): void {
     this.pizzaForPreview = pizza;
   }
 

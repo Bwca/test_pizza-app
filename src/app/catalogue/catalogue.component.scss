@@ -31,7 +31,7 @@ app-catalogue-preview-item {
   bottom: 0;
   border-radius: 20px;
   box-shadow: 0 0 5px 10px $shade-color;
-  width: $max-container-width;
+  max-width: $max-container-width;
 }
 
 app-catalogue-item {
