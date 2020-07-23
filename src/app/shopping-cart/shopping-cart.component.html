@@ -1,24 +1,16 @@
-<section *ngIf="items$ | async as items; else noItems">
+<app-card-section *ngIf="items$ | async as items; else noItems" heading="Order Item(s)">
   <ng-container *ngIf="items.length; else noItems">
-    <h2 class="section-heading">
-      Order Item(s)
-    </h2>
     <app-cart-item *ngFor="let item of items" [cartItem]="item"></app-cart-item>
   </ng-container>
-</section>
+</app-card-section>
 
-<section *ngIf="total$ | async as total">
-  <h2 class="section-heading">
-    Payment Details
-  </h2>
-
+<app-card-section *ngIf="total$ | async as total" heading="Payment Details">
   <div class="total">
     <div>Total payment:</div>
     <app-item-price [price]="total"></app-item-price>
   </div>
-
   <app-call-to-action-button [routerLink]="['/', routes.PlaceOrder]" buttonLabel="Checkout"></app-call-to-action-button>
-</section>
+</app-card-section>
 
 <ng-template #noItems>
   <h2 class="section-heading">

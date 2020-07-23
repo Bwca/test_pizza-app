@@ -1,28 +1,11 @@
 @import 'classes';
 @import 'variables';
 
-.section-heading {
-  @extend %level-2-heading;
-  margin-top: 1rem;
-  box-sizing: border-box;
-  padding-bottom: 1rem;
-  border-style: solid;
-  border-color: $shade-color;
-  border-width: 0 0 2px 0;
-}
-
-section{
-  box-shadow: 0px 3px 2px 1px $shade-color;
-  box-sizing: border-box;
-  padding: 1rem 2rem 3rem 2rem;
-  border-radius: 20px;
-}
-
-section + section {
+app-card-section + app-card-section {
   margin-top: 2rem;
 }
 
-.total{
+.total {
   display: flex;
   justify-content: space-between;
   width: 100%;
