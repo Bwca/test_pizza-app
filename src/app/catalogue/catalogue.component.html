@@ -1,13 +1,7 @@
 <ng-container *ngFor="let pizza of pizzas$ | async">
-  <app-catalogue-item
-    [item]="pizza"
-    (click)="selectPizza($event, pizza)"
-  ></app-catalogue-item>
+  <app-catalogue-item [item]="pizza" (click)="selectPizza($event, pizza)"></app-catalogue-item>
 </ng-container>
 
 <ng-container *ngIf="pizzaForPreview">
-  <app-catalogue-preview-item
-    [item]="pizzaForPreview"
-    (closePreview)="resetSelectedPizza()"
-  ></app-catalogue-preview-item>
+  <app-catalogue-preview-item [item]="pizzaForPreview" (closePreview)="resetSelectedPizza()"></app-catalogue-preview-item>
 </ng-container>

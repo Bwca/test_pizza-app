@@ -3,18 +3,13 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { RequestInfo } from 'angular-in-memory-web-api/interfaces';
 
+import { CreateOrderDto } from '../shared/dto/create-order/create-order.dto';
+import { CurrencyDto } from '../shared/dto/currency.dto';
+import { OrderHistoryItemDto } from '../shared/dto/order-history/order-history-item.dto';
+import { OrderHistoryDto } from '../shared/dto/order-history/order-history.dto';
 import { PizzaDto } from '../shared/dto/pizza.dto';
 import { UserDto } from '../shared/dto/user/user.dto';
-import { CurrencyDto } from '../shared/dto/currency.dto';
-import { OrderHistoryDto } from '../shared/dto/order-history/order-history.dto';
-import {
-  CURRENCIES_MOCKUP,
-  PIZZAS_MOCKUPS,
-  USERS_MOCKUP,
-  ORDER_HISTORY_MOCKUP,
-} from './mockups';
-import { CreateOrderDto } from '../shared/dto/create-order/create-order.dto';
-import { OrderHistoryItemDto } from '../shared/dto/order-history/order-history-item.dto';
+import { CURRENCIES_MOCKUP, ORDER_HISTORY_MOCKUP, PIZZAS_MOCKUPS, USERS_MOCKUP } from './mockups';
 
 interface FakeDatabase {
   pizzas: PizzaDto[];
@@ -90,16 +85,12 @@ export class FakeBackendService implements InMemoryDbService {
       const reqBody: CreateOrderDto = (reqInfo.req as any).body;
       const { headers, url } = reqInfo;
 
-      const id = ORDER_HISTORY_MOCKUP.length
-        ? Math.max(...ORDER_HISTORY_MOCKUP.map(({ id }) => id)) + 1
-        : 1;
+      const id = ORDER_HISTORY_MOCKUP.length ? Math.max(...ORDER_HISTORY_MOCKUP.map(({ id }) => id)) + 1 : 1;
       const date = new Date().toISOString();
       const items: OrderHistoryItemDto[] = [];
 
       let total = 0;
-      const selectedCurrency = CURRENCIES_MOCKUP.find(
-        (i) => i.id === reqBody.currencyId
-      );
+      const selectedCurrency = CURRENCIES_MOCKUP.find((i) => i.id === reqBody.currencyId);
       try {
         reqBody.orderedItems.forEach((i) => {
           const item = PIZZAS_MOCKUPS.find(({ id }) => id === i.itemId);
@@ -107,9 +98,7 @@ export class FakeBackendService implements InMemoryDbService {
             name: item!.name,
             quantity: i.quantity,
           });
-          total +=
-            item!.prices.find((i) => i.currencyId === selectedCurrency!.id)!
-              .amount * i.quantity;
+          total += item!.prices.find((i) => i.currencyId === selectedCurrency!.id)!.amount * i.quantity;
         });
       } catch (e) {
         console.log(e);

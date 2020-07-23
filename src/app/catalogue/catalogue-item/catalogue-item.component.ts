@@ -14,17 +14,12 @@ export class CatalogueItemComponent {
   @Input() set item(pizza: PizzaDto) {
     this.pizza = pizza;
     this.price$ = this.pizzaPriceService.getPizzaPrice(pizza);
-    this.quantityInShoppingCart$ = this.shoppingCartService.getQuantityInShoppingCart(
-      pizza
-    );
+    this.quantityInShoppingCart$ = this.shoppingCartService.getQuantityInShoppingCart(pizza);
   }
 
   public pizza!: PizzaDto;
   public price$!: Observable<number>;
   public quantityInShoppingCart$!: Observable<number>;
 
-  constructor(
-    private pizzaPriceService: PizzaPriceService,
-    private shoppingCartService: ShoppingCartService
-  ) {}
+  constructor(private pizzaPriceService: PizzaPriceService, private shoppingCartService: ShoppingCartService) {}
 }

@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { CurrencyDto } from '../dto/currency.dto';
 import { API_ENDPOINTS } from '../const/api-endpoints.const';
-import { PizzaDto } from '../dto/pizza.dto';
-import { OrderHistoryDto } from '../dto/order-history/order-history.dto';
 import { CreateOrderDto } from '../dto/create-order/create-order.dto';
-import { UserDto } from '../dto/user/user.dto';
+import { CurrencyDto } from '../dto/currency.dto';
+import { OrderHistoryDto } from '../dto/order-history/order-history.dto';
+import { PizzaDto } from '../dto/pizza.dto';
 import { LoginDto } from '../dto/user/login.dto';
+import { UserDto } from '../dto/user/user.dto';
 
 @Injectable({
   providedIn: 'root',
