@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 import { ApiService } from '../api/api.service';
@@ -16,7 +17,7 @@ export class CurrencyService {
   }
 
   public get selectedCurrency$(): Observable<CurrencyDto> {
-    return this.selectedCurrency$$.asObservable();
+    return this.selectedCurrency$$.asObservable().pipe(filter(({ id }) => Boolean(id)));
   }
 
   public get availableCurrencies$(): Observable<CurrencyDto[]> {

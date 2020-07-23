@@ -17,10 +17,9 @@
   @extend %level-2-heading;
 }
 
-.item-price {
+app-item-price {
   @extend %price-text;
-  margin: 0;
-  padding: 0;
+  margin-top: auto;
 }
 
 .item-image {

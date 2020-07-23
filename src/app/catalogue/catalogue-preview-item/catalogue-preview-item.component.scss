@@ -70,52 +70,18 @@ header {
   }
 }
 
-.price {
+app-item-price {
   grid-area: price;
   @extend %price-text;
   @extend %centered-flex-container;
 }
 
-.counter {
+app-item-amount {
   grid-area: counter;
-  @extend %centered-flex-container;
-
-  .amount-controls {
-    box-sizing: border-box;
-    padding: 5px;
-    box-shadow: 3px 3px 2px 2px $shade-color;
-    display: inline-block;
-    .amount {
-      display: inline-block;
-      width: 3rem;
-      text-align: center;
-    }
-    .qty-modifier {
-      color: $action-color;
-      font-weight: bold;
-      border: none;
-      font-size: 1.2rem;
-      background-color: none;
-      cursor: pointer;
-    }
-  }
 }
 
-footer {
+app-call-to-action-button {
   grid-area: add;
-  .add-to-cart-button {
-    width: 95%;
-    color: $light-color;
-    background-color: $action-color;
-    border: none;
-    box-shadow: 3px 3px 2px 2px $shade-color;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    margin: auto;
-    border-radius: 20px;
-    display: block;
-    cursor: pointer;
-  }
+  width: 95%;
+  margin: auto;
 }

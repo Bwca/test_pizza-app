@@ -1,0 +1,3 @@
+<ng-container *ngIf="currencyCode$ | async as code">
+  {{ price | currency: code }}
+</ng-container>

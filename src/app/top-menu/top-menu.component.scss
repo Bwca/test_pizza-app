@@ -1,0 +1,30 @@
+@import 'variables';
+
+nav {
+  background-color: $light-color;
+  height: 5rem;
+  line-height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    cursor: pointer;
+    color: $dark-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .active-link {
+    color: $action-color;
+  }
+
+  .currency.is-active {
+    color: $action-color;
+  }
+
+  .currency + .currency {
+    margin-left: 2rem;
+  }
+}

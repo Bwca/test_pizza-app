@@ -1,0 +1,9 @@
+<img [src]="cartItem.imageUrl" [alt]="cartItem.name" class="item-image" />
+
+<div class="details">
+  <h3>{{ cartItem.name }}</h3>
+
+  <ng-container *ngIf="price$ | async as price">
+    <app-item-price [price]="price"></app-item-price>
+  </ng-container>
+</div>

@@ -1,5 +1,5 @@
 <header>
-  <button (click)="closePreview.emit()" class="close-button">^</button>
+  <button (click)="closePreview.emit()" class="close-button">click to close</button>
 </header>
 
 <div class="item-image-container">
@@ -11,18 +11,10 @@
   <p class="item-description">{{ pizza.description }}</p>
 </div>
 
-<div class="price">{{ price$ | async }}</div>
+<ng-container *ngIf="price$ | async as price">
+  <app-item-price [price]="price"></app-item-price>
+</ng-container>
 
-<div class="counter">
-  <div class="amount-controls">
-    <button (click)="increaseAmount()" class="qty-modifier">+</button>
-    <span class="amount">{{ quantity }}</span>
-    <button (click)="decreaseAmount()" class="qty-modifier">-</button>
-  </div>
-</div>
+<app-item-amount (increase)="increaseAmount()" (decrease)="decreaseAmount()" [amount]="quantity"></app-item-amount>
 
-<footer>
-  <button (click)="addItemToCart()" class="add-to-cart-button">
-    Add To Cart
-  </button>
-</footer>
+<app-call-to-action-button buttonLabel="Add To Cart" (action)="addItemToCart()"></app-call-to-action-button>

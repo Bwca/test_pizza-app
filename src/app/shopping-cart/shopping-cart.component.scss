@@ -1,0 +1,13 @@
+@import 'classes';
+@import 'variables';
+
+app-card-section + app-card-section {
+  margin-top: 2rem;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem 0;
+}

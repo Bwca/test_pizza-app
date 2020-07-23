@@ -1,1 +1,20 @@
-<p>shopping-cart works!</p>
+<app-card-section *ngIf="items$ | async as items; else noItems" heading="Order Item(s)">
+  <ng-container *ngIf="items.length; else noItems">
+    <app-cart-item *ngFor="let item of items" [cartItem]="item"></app-cart-item>
+  </ng-container>
+</app-card-section>
+
+<app-card-section *ngIf="total$ | async as total" heading="Payment Details">
+  <div class="total">
+    <div>Total payment:</div>
+    <app-item-price [price]="total"></app-item-price>
+  </div>
+  <app-call-to-action-button [routerLink]="['/', routes.PlaceOrder]" buttonLabel="Checkout"></app-call-to-action-button>
+</app-card-section>
+
+<ng-template #noItems>
+  <h2 class="section-heading">
+    Looks like you haven't added anything to your cart yet.
+  </h2>
+  <app-call-to-action-button buttonLabel="Go shopping" (action)="goToCatalogue()"></app-call-to-action-button>
+</ng-template>
