@@ -1,6 +1,6 @@
-import {PizzaDto} from '../dto/pizza.dto';
+import { PizzaDto } from '../dto/pizza.dto';
 
 export interface ShoppingCartItem {
-    item: PizzaDto;
-    quantity: number;
+  item: PizzaDto;
+  quantity: number;
 }

@@ -6,7 +6,6 @@ import { AppRoutes } from '../app-routing/app-routes.enum';
 import { CurrencyService } from '../shared/currency/currency.service';
 import { CurrencyDto } from '../shared/dto/currency.dto';
 
-
 interface MenuCurrency extends CurrencyDto {
   isActive: boolean;
 }
@@ -16,7 +15,6 @@ interface MenuCurrency extends CurrencyDto {
   templateUrl: './top-menu.component.html',
   styleUrls: ['./top-menu.component.scss'],
 })
-
 export class TopMenuComponent {
   public currencies$: Observable<MenuCurrency[]> = combineLatest([
     this.currencyService.availableCurrencies$,

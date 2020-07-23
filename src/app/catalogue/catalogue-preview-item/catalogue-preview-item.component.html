@@ -15,11 +15,6 @@
   <app-item-price [price]="price"></app-item-price>
 </ng-container>
 
-
-<app-item-amount
-(increase)="increaseAmount()"
-(decrease)="decreaseAmount()"
-[amount]="quantity"></app-item-amount>
+<app-item-amount (increase)="increaseAmount()" (decrease)="decreaseAmount()" [amount]="quantity"></app-item-amount>
 
 <app-call-to-action-button buttonLabel="Add To Cart" (action)="addItemToCart()"></app-call-to-action-button>
-
