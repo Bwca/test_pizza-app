@@ -1,10 +1,10 @@
 import {
   Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
   Input,
   Output,
-  EventEmitter,
-  ElementRef,
-  HostListener,
 } from '@angular/core';
 import { Observable } from 'rxjs';
 

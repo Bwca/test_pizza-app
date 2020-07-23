@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { RequestInfo } from 'angular-in-memory-web-api/interfaces';
 
+import { CreateOrderDto } from '../shared/dto/create-order/create-order.dto';
+import { CurrencyDto } from '../shared/dto/currency.dto';
+import { OrderHistoryItemDto } from '../shared/dto/order-history/order-history-item.dto';
+import { OrderHistoryDto } from '../shared/dto/order-history/order-history.dto';
 import { PizzaDto } from '../shared/dto/pizza.dto';
 import { UserDto } from '../shared/dto/user/user.dto';
-import { CurrencyDto } from '../shared/dto/currency.dto';
-import { OrderHistoryDto } from '../shared/dto/order-history/order-history.dto';
 import {
   CURRENCIES_MOCKUP,
+  ORDER_HISTORY_MOCKUP,
   PIZZAS_MOCKUPS,
   USERS_MOCKUP,
-  ORDER_HISTORY_MOCKUP,
 } from './mockups';
-import { CreateOrderDto } from '../shared/dto/create-order/create-order.dto';
-import { OrderHistoryItemDto } from '../shared/dto/order-history/order-history-item.dto';
 
 interface FakeDatabase {
   pizzas: PizzaDto[];

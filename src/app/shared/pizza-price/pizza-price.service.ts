@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
-import { PizzaDto } from '../dto/pizza.dto';
 import { CurrencyService } from '../currency/currency.service';
+import { PizzaDto } from '../dto/pizza.dto';
 
 @Injectable({
   providedIn: 'root',

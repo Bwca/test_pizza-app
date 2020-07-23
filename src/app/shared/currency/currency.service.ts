@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from '../api/api.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { CurrencyDto } from '../dto/currency.dto';
 import { environment } from '../../../environments/environment';
+import { ApiService } from '../api/api.service';
+import { CurrencyDto } from '../dto/currency.dto';
 
 @Injectable({
   providedIn: 'root',
