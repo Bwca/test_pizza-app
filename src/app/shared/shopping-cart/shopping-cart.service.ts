@@ -16,6 +16,10 @@ export class ShoppingCartService {
     return this.items$.asObservable();
   }
 
+  public get totalItemsInCart$(): Observable<number> {
+    return this.cartItems$.pipe(map((items) => items.reduce((a, b) => a + b.quantity, 0)));
+  }
+
   public getQuantityInShoppingCart(item: PizzaDto): Observable<number> {
     return this.cartItems$.pipe(map(() => this.findItemInCart(item)?.quantity || 0));
   }
@@ -40,7 +44,7 @@ export class ShoppingCartService {
     }
 
     if (!--itemInCart.quantity) {
-      this.cartItems.filter((i) => i.item.id !== item.id);
+      this.cartItems = this.cartItems.filter((i) => i.item.id !== item.id);
     }
 
     this.updateItemsInShoppingCart();

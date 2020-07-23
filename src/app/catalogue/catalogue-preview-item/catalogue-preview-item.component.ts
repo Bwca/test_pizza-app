@@ -13,7 +13,7 @@ import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.
 export class CataloguePreviewItemComponent {
   @Input() set item(pizza: PizzaDto) {
     this.pizza = pizza;
-    this.price$ = this.pizzaPriceService.getPizzaPrice(pizza);
+    this.price$ = this.pizzaPriceService.getPizzaPrice$(pizza);
     this.resetCounter();
   }
 

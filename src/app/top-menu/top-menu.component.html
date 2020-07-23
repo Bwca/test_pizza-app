@@ -2,13 +2,6 @@
   <a [routerLink]="['/', routes.Catalogue]" routerLinkActive="active-link" class="nav-link">
     🍕 pizza
   </a>
-  <ng-container *ngIf="currencies$ | async as currencies">
-    <div class="currency-picker">
-      <ng-container *ngFor="let currency of currencies">
-        <a (click)="selectCurrency(currency)" class="currency" [class.is-active]="currency.isActive">{{ currency.symbol }}</a>
-      </ng-container>
-    </div>
-  </ng-container>
   <a [routerLink]="['/', routes.ShoppingCart]" routerLinkActive="active-link" class="nav-link">
     🛒 cart
   </a>
@@ -17,6 +10,14 @@
   </a>
 
   <ng-container *ngIf="isLoggedIn$ | async; then history; else login"></ng-container>
+
+  <ng-container *ngIf="currencies$ | async as currencies">
+    <div class="currency-picker">
+      <ng-container *ngFor="let currency of currencies">
+        <a (click)="selectCurrency(currency)" class="currency" [class.is-active]="currency.isActive">{{ currency.symbol }}</a>
+      </ng-container>
+    </div>
+  </ng-container>
 </nav>
 
 <ng-template #login>
