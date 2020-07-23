@@ -1,0 +1,6 @@
+<ng-container *ngIf="items$ | async as items">
+  <section *ngFor="let item of items">
+    <app-cart-item-view [item]="item.item"></app-cart-item-view>
+    <span>{{ item.quantity }} pcs</span>
+  </section>
+</ng-container>
