@@ -1,0 +1,5 @@
+@import 'classes';
+
+.section-heading {
+  @extend %level-2-heading;
+}

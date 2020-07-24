@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { API_ENDPOINTS } from '../const/api-endpoints.const';
 import { CreateOrderDto } from '../dto/create-order/create-order.dto';
@@ -37,6 +37,11 @@ export class ApiService {
   }
 
   public logout(): Observable<void> {
-    return this.http.get<void>(API_ENDPOINTS.logout, {});
+    /** FIXME: A crutch, since im-memory db doesn't
+     *  return the value it should, in fact it ignores
+     *  the request completely
+     */
+    return of(undefined);
+    // return this.http.get<void>(API_ENDPOINTS.logout, {});
   }
 }
