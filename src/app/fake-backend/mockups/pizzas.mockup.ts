@@ -10,11 +10,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 12.37,
+        amount: 23,
       },
       {
         currencyId: 2,
-        amount: 89.83,
+        amount: 19.75,
       },
     ],
   },
@@ -27,11 +27,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 18.55,
+        amount: 25,
       },
       {
         currencyId: 2,
-        amount: 12.33,
+        amount: 21.47,
       },
     ],
   },
@@ -44,11 +44,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 59.12,
+        amount: 24,
       },
       {
         currencyId: 2,
-        amount: 29.47,
+        amount: 20.61,
       },
     ],
   },
@@ -61,11 +61,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 66.77,
+        amount: 27,
       },
       {
         currencyId: 2,
-        amount: 60.27,
+        amount: 23.19,
       },
     ],
   },
@@ -78,11 +78,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 12.08,
+        amount: 27,
       },
       {
         currencyId: 2,
-        amount: 82.63,
+        amount: 23.19,
       },
     ],
   },
@@ -95,11 +95,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 31.82,
+        amount: 22,
       },
       {
         currencyId: 2,
-        amount: 59.87,
+        amount: 18.89,
       },
     ],
   },
@@ -112,11 +112,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 69.31,
+        amount: 25.5,
       },
       {
         currencyId: 2,
-        amount: 60.33,
+        amount: 21.9,
       },
     ],
   },
@@ -129,11 +129,11 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     prices: [
       {
         currencyId: 1,
-        amount: 52.54,
+        amount: 24,
       },
       {
         currencyId: 2,
-        amount: 26.5,
+        amount: 20.61,
       },
     ],
   },

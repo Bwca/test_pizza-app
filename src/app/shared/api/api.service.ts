@@ -7,6 +7,7 @@ import { CreateOrderDto } from '../dto/create-order/create-order.dto';
 import { CurrencyDto } from '../dto/currency.dto';
 import { OrderHistoryDto } from '../dto/order-history/order-history.dto';
 import { PizzaDto } from '../dto/pizza.dto';
+import { PriceDto } from '../dto/price.dto';
 import { LoginDto } from '../dto/user/login.dto';
 import { UserDto } from '../dto/user/user.dto';
 
@@ -26,6 +27,10 @@ export class ApiService {
 
   public getOrdersHistory(): Observable<OrderHistoryDto[]> {
     return this.http.get<OrderHistoryDto[]>(API_ENDPOINTS.orders);
+  }
+
+  public getDeliveryCosts(): Observable<PriceDto[]> {
+    return this.http.get<PriceDto[]>(API_ENDPOINTS.delivery);
   }
 
   public placeOrder(order: CreateOrderDto): Observable<OrderHistoryDto> {

@@ -8,13 +8,15 @@ import { CurrencyDto } from '../shared/dto/currency.dto';
 import { OrderHistoryItemDto } from '../shared/dto/order-history/order-history-item.dto';
 import { OrderHistoryDto } from '../shared/dto/order-history/order-history.dto';
 import { PizzaDto } from '../shared/dto/pizza.dto';
+import { PriceDto } from '../shared/dto/price.dto';
 import { UserDto } from '../shared/dto/user/user.dto';
-import { CURRENCIES_MOCKUP, ORDER_HISTORY_MOCKUP, PIZZAS_MOCKUPS, USERS_MOCKUP } from './mockups';
+import { CURRENCIES_MOCKUP, DELIVERY_COSTS, ORDER_HISTORY_MOCKUP, PIZZAS_MOCKUPS, USERS_MOCKUP } from './mockups';
 
 interface FakeDatabase {
   pizzas: PizzaDto[];
   currencies: CurrencyDto[];
   orders: OrderHistoryDto[];
+  delivery: PriceDto[];
 }
 
 @Injectable({
@@ -28,7 +30,8 @@ export class FakeBackendService implements InMemoryDbService {
     const currencies = CURRENCIES_MOCKUP;
     const pizzas = PIZZAS_MOCKUPS;
     const orders = ORDER_HISTORY_MOCKUP;
-    return { pizzas, currencies, orders };
+    const delivery = DELIVERY_COSTS;
+    return { pizzas, currencies, orders, delivery };
   }
 
   post(reqInfo: RequestInfo): any {

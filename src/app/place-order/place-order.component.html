@@ -2,6 +2,10 @@
   <app-items-list></app-items-list>
 </app-card-section>
 
+<app-card-section *ngIf="deliveryCost" heading="Delivery Costs">
+  <app-item-price [price]="deliveryCost"></app-item-price>
+</app-card-section>
+
 <app-card-section *ngIf="total$ | async as total" heading="Total">
   <app-item-price [price]="total"></app-item-price>
 </app-card-section>
