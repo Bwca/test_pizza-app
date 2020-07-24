@@ -19,6 +19,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(FakeBackendService, {
       dataEncapsulation: false,
+      passThruUnknownUrl: true,
+      apiBase: 'api/',
     }),
   ],
   bootstrap: [AppComponent],

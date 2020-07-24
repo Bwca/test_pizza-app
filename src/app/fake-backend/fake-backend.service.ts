@@ -22,6 +22,8 @@ interface FakeDatabase {
 })
 /* tslint:disable */
 export class FakeBackendService implements InMemoryDbService {
+  private isUserLoggedIn = false;
+
   public createDb(): FakeDatabase {
     const currencies = CURRENCIES_MOCKUP;
     const pizzas = PIZZAS_MOCKUPS;
@@ -42,19 +44,22 @@ export class FakeBackendService implements InMemoryDbService {
 
   get(reqInfo: RequestInfo): any {
     if (reqInfo.collectionName === 'logout') {
-      const { headers, url } = reqInfo;
-
-      console.log('logging user out');
-      return {
-        status: 200,
-        headers,
-        url,
-        body: {
-          user: 'none',
-        },
-      };
+      return this.logout(reqInfo);
     }
     return null;
+  }
+
+  private logout(reqInfo: RequestInfo): any {
+    const { headers, url } = reqInfo;
+    this.isUserLoggedIn = false;
+    return {
+      status: 200,
+      headers,
+      url,
+      body: {
+        user: 'none',
+      },
+    };
   }
 
   private authenticate(reqInfo: RequestInfo): any {
@@ -85,6 +90,8 @@ export class FakeBackendService implements InMemoryDbService {
         username,
         login,
       };
+
+      this.isUserLoggedIn = true;
 
       return {
         status: 200,
@@ -132,13 +139,7 @@ export class FakeBackendService implements InMemoryDbService {
         total: `${selectedCurrency!.symbol}${total.toFixed(2)}`,
       };
 
-      /**
-       * Store history for logged user
-       *  for the sake of simplicity, let's assume
-       *  the user is always logged, so there's no need for
-       *  to check for tokens or whatsoever
-       */
-      if (true) {
+      if (this.isUserLoggedIn) {
         ORDER_HISTORY_MOCKUP.push(orderHistoryDto);
       }
 
