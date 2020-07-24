@@ -1,1 +1,11 @@
-<p>orders-history works!</p>
+<ng-container *ngIf="orders$ | async as orders">
+  <ng-container *ngIf="orders.length; else noItems">
+    <app-history-record *ngFor="let record of orders" [record]="record"></app-history-record>
+  </ng-container>
+</ng-container>
+
+<ng-template #noItems>
+  <app-card-section heading="Orders History">
+    <app-no-items></app-no-items>
+  </app-card-section>
+</ng-template>

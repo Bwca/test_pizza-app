@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.service';
 import { AppRoutes } from '../app-routing/app-routes.enum';
@@ -16,9 +15,5 @@ export class ShoppingCartComponent {
 
   public routes = AppRoutes;
 
-  constructor(private shoppingCart: ShoppingCartService, private totalAmountService: TotalAmountService, private router: Router) {}
-
-  public goToCatalogue(): void {
-    this.router.navigate([this.routes.Catalogue]);
-  }
+  constructor(private shoppingCart: ShoppingCartService, private totalAmountService: TotalAmountService) {}
 }

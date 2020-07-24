@@ -129,7 +129,7 @@ export class FakeBackendService implements InMemoryDbService {
         id,
         date,
         items,
-        total: `${selectedCurrency!.symbol}${total}`,
+        total: `${selectedCurrency!.symbol}${total.toFixed(2)}`,
       };
 
       /**
