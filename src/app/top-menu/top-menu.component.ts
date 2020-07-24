@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { combineLatest, Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { AppRoutes } from '../app-routing/app-routes.enum';
 import { CurrencyService } from '../shared/currency/currency.service';

@@ -50,7 +50,7 @@ export class FakeBackendService implements InMemoryDbService {
         headers,
         url,
         body: {
-          user: 'none'
+          user: 'none',
         },
       };
     }

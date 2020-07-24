@@ -18,9 +18,11 @@ export class LoginService {
   }
 
   public logout(): Observable<void> {
-    return this.apiService.logout().pipe(tap(() => {
-      console.log('logging out');
-      this.userService.removeUser();
-    }));
+    return this.apiService.logout().pipe(
+      tap(() => {
+        console.log('logging out');
+        this.userService.removeUser();
+      })
+    );
   }
 }
