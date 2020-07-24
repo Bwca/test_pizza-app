@@ -41,7 +41,7 @@ export class ApiService {
      *  return the value it should, in fact it ignores
      *  the request completely
      */
+    this.http.get<void>(API_ENDPOINTS.logout).subscribe();
     return of(undefined);
-    // return this.http.get<void>(API_ENDPOINTS.logout, {});
   }
 }
