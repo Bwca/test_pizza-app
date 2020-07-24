@@ -6,7 +6,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Smokey Shredded Pork',
     description:
       'Smokey barbecue base, free range shredded pork, chunky cut pineapple pieces garnished with fresh asian style slaw & garlic aioli',
-    imageUrl: '/assets/pizza/WalterGs-Smokey-Shredded-Pork-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Smokey-Shredded-Pork-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -23,7 +23,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Wild Caught Chili Prawn & Chorizo',
     description:
       'Tomato base, roma tomatoes, wild caught chili prawns, chorizo sausage, roasted red capsicum, fresh buffalo cheese topped with mozzarella garnished with fresh mixed herbs & a wedge of lemon',
-    imageUrl: '/assets/pizza/WalterGs-Pawn-Chorizo-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Pawn-Chorizo-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -40,7 +40,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Wild Caught Garlic Prawn',
     description:
       'Tomato base, wild caught garlic prawns, roasted red capsicum, shallots, feta cheese topped with mozzarella garnished with fresh mixed herbs & a wedge of lemon',
-    imageUrl: '/assets/pizza/WalterGs-Wild-Caught-Garlic-Prawn-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Wild-Caught-Garlic-Prawn-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -57,7 +57,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Lamb Baa Baa',
     description:
       'Tomato base, slow cooked grass fed lamb, spanish onion, grilled eggplant topped with mozzarella garnished with wild rocket & garlic yogurt',
-    imageUrl: '/assets/pizza/WalterGs-Lamb-Baa-Baa-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Lamb-Baa-Baa-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -74,7 +74,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Round Supreme',
     description:
       'Tomato base, free range smoked leg ham, chorizo sausage, pepperoni, mushrooms, fresh capsicum, spanish onion, chunky cut pineapple, olives topped with mozzarella',
-    imageUrl: '/assets/pizza/WalterGs-Walters-Supreme-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Walters-Supreme-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -91,7 +91,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Meat Obsession',
     description:
       'Smokey barbecue base, free range marinated chicken, free range smoked leg ham, pepperoni, chorizo sausage, grass fed ground beef, free range bacon topped with mozzarella',
-    imageUrl: '/assets/pizza/WalterGs-Meat-Obsession-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Meat-Obsession-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -108,7 +108,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'The Mayan',
     description:
       'Salsa base, chorizo sausage, spanish onion, red roasted capsicum, jalapeños, chili flakes topped with mozzarella and a side of avocado salsa, sour cream & corn chips',
-    imageUrl: '/assets/pizza/WalterGs-Mayan-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Mayan-380x380.jpg',
     prices: [
       {
         currencyId: 1,
@@ -125,7 +125,7 @@ export const PIZZAS_MOCKUPS: PizzaDto[] = [
     name: 'Veggie Patch',
     description:
       'Tomato base, baby spinach, mushrooms, roasted red capsicum, grilled eggplant, cherry tomatoes, fresh buffalo cheese topped with mozzarella garnished with pesto aioli',
-    imageUrl: '/assets/pizza/WalterGs-Veggie-Patch-380x380.jpg',
+    imageUrl: './assets/pizza/WalterGs-Veggie-Patch-380x380.jpg',
     prices: [
       {
         currencyId: 1,

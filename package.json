@@ -8,7 +8,8 @@
     "test": "npx -p @angular/cli ng test",
     "lint": "npx -p @angular/cli ng lint",
     "prettify": "npx prettier --write . && npx -p @angular/cli ng lint -- --fix ",
-    "e2e": "npx -p @angular/cli ng e2e"
+    "e2e": "npx -p @angular/cli ng e2e",
+    "deploy": "npx -p @angular/cli ng deploy --base-href=/pizza-app/"
   },
   "husky": {
     "hooks": {
@@ -37,6 +38,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^6.0.0",
     "husky": "^4.2.5",
     "jasmine-core": "~3.5.0",
