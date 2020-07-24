@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { first } from 'rxjs/operators';
 
 import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.service';
 
@@ -8,7 +9,7 @@ import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.
   styleUrls: ['./items-list.component.scss'],
 })
 export class ItemsListComponent {
-  public items$ = this.shoppingCart.cartItems$;
+  public items$ = this.shoppingCart.cartItems$.pipe(first());
 
   constructor(private shoppingCart: ShoppingCartService) {}
 }

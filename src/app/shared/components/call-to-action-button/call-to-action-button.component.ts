@@ -7,5 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CallToActionButtonComponent {
   @Input() buttonLabel!: string;
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() disabled = false;
   @Output() action = new EventEmitter<void>();
 }

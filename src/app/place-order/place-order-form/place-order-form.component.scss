@@ -1,0 +1,45 @@
+@import 'variables';
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  .input-group {
+    display: flex;
+    width: 100%;
+    flex-grow: 0;
+    align-items: center;
+
+    label {
+      min-width: 80px;
+      display: block;
+    }
+
+    input {
+      flex-grow: 1;
+      border: 1px solid $shade-color;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding: 5px;
+      font-size: 1rem;
+    }
+  }
+  .input-group + .input-group {
+    margin-top: 1rem;
+  }
+}
+
+app-call-to-action-button {
+  margin-top: 2rem;
+  display: block;
+}
