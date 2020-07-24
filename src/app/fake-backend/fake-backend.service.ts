@@ -117,8 +117,13 @@ export class FakeBackendService implements InMemoryDbService {
         total: `${selectedCurrency!.symbol}${total}`,
       };
 
-      /** Store history for logged user */
-      if (reqBody.userId) {
+      /**
+       * Store history for logged user
+       *  for the sake of simplicity, let's assume
+       *  the user is always logged, so there's no need for
+       *  to check for tokens or whatsoever
+       */
+      if (true) {
         ORDER_HISTORY_MOCKUP.push(orderHistoryDto);
       }
 

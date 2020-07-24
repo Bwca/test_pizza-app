@@ -10,7 +10,7 @@ import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 })
 export class ShoppingCartService {
   private cartItems: ShoppingCartItem[] = [];
-  private items$ = new BehaviorSubject<ShoppingCartItem[]>([]);
+  private items$ = new BehaviorSubject<ShoppingCartItem[]>(this.cartItems);
 
   public get cartItems$(): Observable<ShoppingCartItem[]> {
     return this.items$.asObservable();
@@ -50,12 +50,16 @@ export class ShoppingCartService {
     this.updateItemsInShoppingCart();
   }
 
+  public emptyCart(): void {
+    this.cartItems = [];
+    this.updateItemsInShoppingCart();
+  }
+
   private findItemInCart(item: PizzaDto): ShoppingCartItem | undefined {
     return this.cartItems.find((i) => i.item.id === item.id);
   }
 
   private updateItemsInShoppingCart(): void {
-    console.log(this.cartItems);
     this.items$.next([...this.cartItems]);
   }
 }

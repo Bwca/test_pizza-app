@@ -2,12 +2,16 @@
   <a [routerLink]="['/', routes.Catalogue]" routerLinkActive="active-link" class="nav-link">
     🍕 pizza
   </a>
-  <a [routerLink]="['/', routes.ShoppingCart]" routerLinkActive="active-link" class="nav-link">
+  <a [routerLink]="['/', routes.ShoppingCart]" routerLinkActive="active-link" class="nav-link cart">
+    <span *ngIf="totalItemsInCart" class="total">{{ totalItemsInCart }}</span>
+
     🛒 cart
   </a>
-  <a [routerLink]="['/', routes.PlaceOrder]" routerLinkActive="active-link" class="nav-link">
-    💳 checkout
-  </a>
+  <ng-container *ngIf="totalItemsInCart">
+    <a [routerLink]="['/', routes.PlaceOrder]" routerLinkActive="active-link" class="nav-link">
+      💳 checkout
+    </a>
+  </ng-container>
 
   <ng-container *ngIf="isLoggedIn$ | async; then history; else login"></ng-container>
 

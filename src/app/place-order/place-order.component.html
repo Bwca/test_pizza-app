@@ -1,1 +1,11 @@
-<p>place-order works!</p>
+<app-card-section heading="Your Order">
+  <app-items-list></app-items-list>
+</app-card-section>
+
+<app-card-section *ngIf="total$ | async as total" heading="Total">
+  <app-item-price [price]="total"></app-item-price>
+</app-card-section>
+
+<app-card-section heading="Fill in the form to complete your order">
+  <app-place-order-form></app-place-order-form>
+</app-card-section>

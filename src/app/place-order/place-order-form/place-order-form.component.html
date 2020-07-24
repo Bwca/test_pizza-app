@@ -1,0 +1,23 @@
+<form [formGroup]="orderForm" (ngSubmit)="placeOrder()">
+  <fieldset>
+    <div class="input-group">
+      <label for="name">
+        Name:
+      </label>
+      <input formControlName="name" id="number" type="text" />
+    </div>
+
+    <div class="input-group">
+      <label for="phone">
+        Phone:
+      </label>
+      <input formControlName="phone" id="phone" type="number" />
+    </div>
+  </fieldset>
+
+  <app-call-to-action-button
+    type="submit"
+    [buttonLabel]="orderButtonLabel"
+    [disabled]="orderForm.invalid || orderForm.disabled"
+  ></app-call-to-action-button>
+</form>
