@@ -125,6 +125,12 @@ export class FakeBackendService implements InMemoryDbService {
           });
           total += item!.prices.find((i) => i.currencyId === selectedCurrency!.id)!.amount * i.quantity;
         });
+        const deliveryCost = DELIVERY_COSTS.find((i) => i.currencyId === selectedCurrency?.id);
+        if (deliveryCost) {
+          total += deliveryCost.amount;
+        } else {
+          throw new Error('delivery cost not found!');
+        }
       } catch (e) {
         console.log(e);
         return {
