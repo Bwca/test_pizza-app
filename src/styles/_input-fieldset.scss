@@ -1,0 +1,26 @@
+@import 'classes';
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    .input-group {
+      display: flex;
+      width: 100%;
+      flex-grow: 0;
+      align-items: center;
+  
+      label {
+        min-width: 120px;
+        display: block;
+      }
+  
+      input {
+        flex-grow: 1;
+        @extend %text-input;
+      }
+    }
+    .input-group + .input-group {
+      margin-top: 1rem;
+    }
+  }

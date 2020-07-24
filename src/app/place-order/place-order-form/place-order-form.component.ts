@@ -31,15 +31,16 @@ export class PlaceOrderFormComponent implements OnInit, OnDestroy {
   }
 
   public placeOrder(): void {
-    const { name, phone } = this.orderForm.value;
-    this.sub = this.orderService.placeOrder(name, phone).subscribe((i) => {
-      console.log(i);
-      this.setFormReadonly();
-    });
-  }
-
-  private setFormReadonly(): void {
-    this.orderButtonLabel = 'Order Placed';
     this.orderForm.disable();
+    const { name, phone } = this.orderForm.value;
+    this.sub = this.orderService.placeOrder(name, phone).subscribe(
+      (i) => {
+        this.orderButtonLabel = 'Order Placed';
+      },
+      (error) => {
+        console.log(error);
+        this.orderForm.enable();
+      }
+    );
   }
 }

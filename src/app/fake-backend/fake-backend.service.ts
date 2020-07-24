@@ -33,13 +33,28 @@ export class FakeBackendService implements InMemoryDbService {
     switch (reqInfo.collectionName) {
       case 'login':
         return this.authenticate(reqInfo);
-
       case 'orders':
         return this.placeOrder(reqInfo);
-
       default:
         return undefined;
     }
+  }
+
+  get(reqInfo: RequestInfo): any {
+    if (reqInfo.collectionName === 'logout') {
+      const { headers, url } = reqInfo;
+
+      console.log('logging user out');
+      return {
+        status: 200,
+        headers,
+        url,
+        body: {
+          user: 'none'
+        },
+      };
+    }
+    return null;
   }
 
   private authenticate(reqInfo: RequestInfo): any {

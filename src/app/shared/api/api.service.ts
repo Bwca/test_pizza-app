@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { API_ENDPOINTS } from '../const/api-endpoints.const';
 import { CreateOrderDto } from '../dto/create-order/create-order.dto';
@@ -32,7 +33,11 @@ export class ApiService {
     return this.http.post<OrderHistoryDto>(API_ENDPOINTS.orders, order);
   }
 
-  public userLogin(login: LoginDto): Observable<UserDto> {
-    return this.http.post<UserDto>(API_ENDPOINTS.login, login);
+  public login(credentials: LoginDto): Observable<UserDto> {
+    return this.http.post<UserDto>(API_ENDPOINTS.login, credentials);
+  }
+
+  public logout(): Observable<void> {
+    return this.http.get<void>(API_ENDPOINTS.logout, {});
   }
 }

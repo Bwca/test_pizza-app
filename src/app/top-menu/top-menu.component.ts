@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { combineLatest, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { AppRoutes } from '../app-routing/app-routes.enum';
 import { CurrencyService } from '../shared/currency/currency.service';
 import { CurrencyDto } from '../shared/dto/currency.dto';
+import { LoginService } from '../shared/login/login.service';
 import { ShoppingCartService } from '../shared/shopping-cart/shopping-cart.service';
+import { UserService } from '../shared/user/user.service';
 
 interface MenuCurrency extends CurrencyDto {
   isActive: boolean;
@@ -32,11 +35,16 @@ export class TopMenuComponent implements OnInit {
     )
   );
 
-  public isLoggedIn$ = of(false);
+  public isLoggedIn$ = this.userService.user$.pipe(map(Boolean));
   public totalItemsInCart = 0;
   public routes = AppRoutes;
 
-  constructor(private currencyService: CurrencyService, private shoppingCartService: ShoppingCartService) {}
+  constructor(
+    private currencyService: CurrencyService,
+    private shoppingCartService: ShoppingCartService,
+    private loginService: LoginService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.shoppingCartService.totalItemsInCart$.subscribe((i) => (this.totalItemsInCart = i));
@@ -44,5 +52,9 @@ export class TopMenuComponent implements OnInit {
 
   public selectCurrency(currency: CurrencyDto): void {
     this.currencyService.setCurrency(currency);
+  }
+
+  public logout(): void {
+    this.loginService.logout().subscribe();
   }
 }
