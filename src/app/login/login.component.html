@@ -1,1 +1,25 @@
-<p>login works!</p>
+<app-card-section heading="Login to your account">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <fieldset>
+      <div class="input-group">
+        <label for="username">
+          Username:
+        </label>
+        <input formControlName="username" id="username" type="text" />
+      </div>
+
+      <div class="input-group">
+        <label for="password">
+          Password:
+        </label>
+        <input formControlName="password" id="password" type="password" />
+      </div>
+    </fieldset>
+
+    <app-call-to-action-button
+      type="submit"
+      buttonLabel="login"
+      [disabled]="loginForm.invalid || loginForm.disabled"
+    ></app-call-to-action-button>
+  </form>
+</app-card-section>

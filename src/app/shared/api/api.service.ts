@@ -32,7 +32,11 @@ export class ApiService {
     return this.http.post<OrderHistoryDto>(API_ENDPOINTS.orders, order);
   }
 
-  public userLogin(login: LoginDto): Observable<UserDto> {
-    return this.http.post<UserDto>(API_ENDPOINTS.login, login);
+  public login(credentials: LoginDto): Observable<UserDto> {
+    return this.http.post<UserDto>(API_ENDPOINTS.login, credentials);
+  }
+
+  public logout(): Observable<void> {
+    return this.http.get<void>(API_ENDPOINTS.logout, {});
   }
 }

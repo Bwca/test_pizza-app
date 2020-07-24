@@ -1,3 +1,5 @@
+@import 'variables';
+
 %responsive-image {
   display: block;
   max-width: 100%;
@@ -24,4 +26,12 @@
   justify-items: center;
   display: flex;
   align-items: center;
+}
+
+%text-input {
+  border: 1px solid $shade-color;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 1rem;
 }
