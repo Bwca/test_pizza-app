@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
-import { instance, mock } from 'ts-mockito';
+import { instance, mock, when } from 'ts-mockito';
 
 import { ApiService } from '../api/api.service';
 import { CurrencyService } from '../currency/currency.service';
@@ -26,6 +27,7 @@ describe('DeliveryCostsService', () => {
         },
       ],
     });
+    when(apiService.getDeliveryCosts()).thenReturn(of([]));
     service = TestBed.inject(DeliveryCostsService);
   });
 

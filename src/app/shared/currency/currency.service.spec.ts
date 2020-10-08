@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
-import { instance, mock } from 'ts-mockito';
+import { instance, mock, when } from 'ts-mockito';
 
 import { ApiService } from '../api/api.service';
 import { CurrencyService } from './currency.service';
@@ -19,6 +20,7 @@ describe('CurrencyService', () => {
         },
       ],
     });
+    when(apiService.getCurrenciesDictionary()).thenReturn(of([]));
     service = TestBed.inject(CurrencyService);
   });
 

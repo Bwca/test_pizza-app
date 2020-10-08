@@ -1,7 +1,8 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
-import { instance, mock } from 'ts-mockito';
+import { instance, mock, when } from 'ts-mockito';
 
 import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.service';
 import { ItemsListComponent } from './items-list.component';
@@ -18,11 +19,13 @@ describe('ItemsListComponent', () => {
       providers: [
         {
           provide: ShoppingCartService,
-          useFactory: () => instance(shoppingCart),
-        },
+          useFactory: () => instance(shoppingCart)
+        }
       ],
-      schemas: [NO_ERRORS_SCHEMA],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
+
+    when(shoppingCart.cartItems$).thenReturn(of([]));
   }));
 
   beforeEach(() => {

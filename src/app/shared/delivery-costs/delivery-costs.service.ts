@@ -23,7 +23,6 @@ export class DeliveryCostsService {
         if (!price) {
           throw new Error('No currency available!');
         }
-        console.log(price);
         return price.amount;
       })
     );

@@ -1,2 +1,4 @@
-<app-cart-item-view [item]="cartItem.item"></app-cart-item-view>
-<app-item-amount (increase)="increaseAmount()" (decrease)="decreaseAmount()" [amount]="cartItem.quantity"></app-item-amount>
+<ng-container *ngIf="cartItem">
+  <app-cart-item-view [item]="cartItem.item"></app-cart-item-view>
+  <app-item-amount (increase)="increaseAmount()" (decrease)="decreaseAmount()" [amount]="cartItem.quantity"></app-item-amount>
+</ng-container>

@@ -1,4 +1,4 @@
-<ng-container *ngIf="record.date | date: 'longDate' as date">
+<ng-container *ngIf="record && record.date | date: 'longDate' as date">
   <app-card-section [heading]="date">
     <ul>
       <li *ngFor="let item of record.items">{{ item.name }} x {{ item.quantity }} pcs</li>

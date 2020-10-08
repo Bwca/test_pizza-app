@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { instance, mock } from 'ts-mockito';
@@ -27,6 +28,7 @@ describe('CatalogueItemComponent', () => {
           useFactory: () => instance(shoppingCartService),
         },
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 

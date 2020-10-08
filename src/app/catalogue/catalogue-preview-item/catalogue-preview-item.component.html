@@ -2,14 +2,16 @@
   <button (click)="closePreview.emit()" class="close-button">click to close</button>
 </header>
 
-<div class="item-image-container">
-  <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
-</div>
+<ng-container *ngIf="pizza">
+  <div class="item-image-container">
+    <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
+  </div>
 
-<div class="description">
-  <h2 class="item-name">{{ pizza.name }}</h2>
-  <p class="item-description">{{ pizza.description }}</p>
-</div>
+  <div class="description">
+    <h2 class="item-name">{{ pizza.name }}</h2>
+    <p class="item-description">{{ pizza.description }}</p>
+  </div>
+</ng-container>
 
 <ng-container *ngIf="price$ | async as price">
   <app-item-price [price]="price"></app-item-price>

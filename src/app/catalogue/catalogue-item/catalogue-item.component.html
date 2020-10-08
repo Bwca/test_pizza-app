@@ -1,10 +1,12 @@
 <ng-container *ngIf="quantityInShoppingCart$ | async as qty">
   <span class="qty-in-cart">{{ qty }}</span>
 </ng-container>
-<div>
-  <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
-</div>
-<h2 class="item-name">{{ pizza.name }}</h2>
+<ng-container *ngIf="pizza">
+  <div>
+    <img [src]="pizza.imageUrl" [alt]="pizza.name" class="item-image" />
+  </div>
+  <h2 class="item-name">{{ pizza.name }}</h2>
+</ng-container>
 <ng-container *ngIf="price$ | async as price">
   <app-item-price [price]="price"></app-item-price>
 </ng-container>
