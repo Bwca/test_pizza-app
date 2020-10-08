@@ -1,14 +1,27 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { instance, mock } from 'ts-mockito';
+
+import { ShoppingCartService } from 'src/app/shared/shopping-cart/shopping-cart.service';
 import { ItemsListComponent } from './items-list.component';
 
 describe('ItemsListComponent', () => {
+  let shoppingCart: ShoppingCartService;
   let component: ItemsListComponent;
   let fixture: ComponentFixture<ItemsListComponent>;
 
   beforeEach(async(() => {
+    shoppingCart = mock(ShoppingCartService);
     TestBed.configureTestingModule({
       declarations: [ItemsListComponent],
+      providers: [
+        {
+          provide: ShoppingCartService,
+          useFactory: () => instance(shoppingCart),
+        },
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
 

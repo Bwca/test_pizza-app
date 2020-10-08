@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HistoryRecordComponent } from './history-record.component';
@@ -9,6 +10,7 @@ describe('HistoryRecordComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HistoryRecordComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
 
