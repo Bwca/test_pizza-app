@@ -4,6 +4,11 @@
   "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/dist/", "<rootDir>/src/environments/"],
   "globals": {
     "ts-jest": {
+      "transform": {
+        "^.+\\.js$": "babel-jest",
+        "^.+\\\\.css$": "jest-transform-css",
+        "\\\\.(jpg|jpeg|png|gif|webp|svg)$": "jest-transform-file"
+      },
       "tsConfig": "<rootDir>/tsconfig.spec.json",
       "stringifyContentPathRegex": "\\.html$",
       "astTransformers": {

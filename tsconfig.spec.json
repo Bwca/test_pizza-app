@@ -3,7 +3,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["jasmine"],
+    "types": ["jest", "jest-image-snapshot"],
     "emitDecoratorMetadata": true
   },
   "files": ["src/polyfills.ts"],
