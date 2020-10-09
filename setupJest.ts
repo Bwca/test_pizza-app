@@ -1,5 +1,10 @@
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import 'jest-preset-angular';
+import { setDefaultOptions } from 'jsdom-screenshot';
 
-// tslint:disable-next-line:no-any
+setDefaultOptions({
+  launch: { args: ['--no-sandbox'] }
+});
+
+jest.setTimeout(10000);
 expect.extend({ toMatchImageSnapshot });

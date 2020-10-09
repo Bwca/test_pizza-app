@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "npx -p @angular/cli ng",
-    "test": "jest",
+    "test": "docker-compose run --rm visual",
     "test:watch": "jest --watch",
     "build": "npx -p @angular/cli ng build",
     "lint": "npx -p @angular/cli ng lint",

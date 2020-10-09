@@ -1,7 +1,13 @@
 {
   "preset": "jest-preset-angular",
-  "setupFilesAfterEnv": ["<rootDir>/setupJest.ts"],
-  "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/dist/", "<rootDir>/src/environments/"],
+  "setupFilesAfterEnv": [
+    "<rootDir>/setupJest.ts"
+  ],
+  "testPathIgnorePatterns": [
+    "<rootDir>/node_modules/",
+    "<rootDir>/dist/",
+    "<rootDir>/src/environments/"
+  ],
   "globals": {
     "ts-jest": {
       "transform": {
