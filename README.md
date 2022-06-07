@@ -8,4 +8,4 @@ Uses Angular and fake backend implemented via a service.
 
 ## Well, where is it?
 
-View deployment [here](https://bwca.github.io/test__pizza-app)
+View deployment [here](https://bwca.github.io/test__pizza-app) :)
