@@ -2,6 +2,7 @@
   "name": "pizza-app",
   "version": "0.0.0",
   "scripts": {
+    "start": "ng serve",
     "ng": "npx -p @angular/cli ng",
     "test": "docker-compose run --rm visual",
     "test:watch": "jest --watch",
@@ -9,7 +10,7 @@
     "lint": "npx -p @angular/cli ng lint",
     "prettify": "npx prettier --write . && npx -p @angular/cli ng lint -- --fix ",
     "e2e": "npx -p @angular/cli ng e2e",
-    "deploy": "npx -p @angular/cli ng deploy --base-href=/pizza-app/"
+    "deploy": "npx -p @angular/cli ng deploy --base-href=/test__pizza-app/"
   },
   "private": true,
   "dependencies": {
